@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+
+
+	<head>
+		<title>About</title>
+		<link rel="stylesheet" href="{% static "css/base.css" %}" />
+		<script src=""{% static "js/jquery.js" %}"></script>
+	</head>
+
+	<body>
+		<h1>About page says...</h1>
+		<div>
+			hey there partner! <br />
+			<strong>{{ aboutme }}</strong><br />
+
+		</div>
+		<div>
+			<img src="{% static "images/about.jpg" %}" alt="About Pic" />
+		</div>
+	</body>
+</html>
