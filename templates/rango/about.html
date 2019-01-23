@@ -1,16 +1,12 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html>
+{% block title_block %}
+	About
+{% endblock %}
 
 
-	<head>
-		<title>About</title>
-		<link rel="stylesheet" href="{% static "css/base.css" %}" />
-		<script src=""{% static "js/jquery.js" %}"></script>
-	</head>
-
-	<body>
+{% block body_block %}
 		<h1>About page says...</h1>
 		<div>
 			hey there partner! <br />
@@ -22,5 +18,4 @@
 			<img src="{% static "images/about.jpg" %}" alt="About Pic" />
 
 		</div>
-	</body>
-</html>
+{% endblock %}
