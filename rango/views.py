@@ -26,13 +26,21 @@ def index(request):
     return response
 
 def about(request):
-    if request.session.test_cookie_worked():
-        print ("TEST COOKIE WORKED!")
-        request.session.delete_test_cookie()
+    #if request.session.test_cookie_worked():
+        #print ("TEST COOKIE WORKED!")
+        #request.session.delete_test_cookie()
     #context_dict = {'aboutme': "This tutorial has been put together by Yingjia L."}
-    print(request.method)
-    print(request.user)
-    return render(request, 'rango/about.html', {})
+    #print(request.method)
+    #print(request.user)
+    #return render(request, 'rango/about.html', {})
+
+    context_dict={}
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    response = render(request, 'rango/about.html', context=context_dict)
+    #return render(request, 'rango/index.html', context_dict)
+    return response
 
 def show_category(request, category_name_slug):
     context_dict = {}
