@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load staticfiles %}
 {% load rango_template_tags %}
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{% static 'images/favicon.ico' %}">
 
-    <title>
-        Rango -
-        {% block title %}
-            How to Tango with Django!
-        {% endblock %}
-    </title>
+    <title>Rango - {% block title %}How to Tango with Django!{% endblock %}</title>
     <!-- Bootstrap core CSS -->
     <link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About</a>
@@ -52,7 +47,7 @@
 
       {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'registration_register' %}">Register Here</a>
+            <a class="nav-link" href="{% url 'registration_register %}">Register Here</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'auth_login' %}">Login</a>
@@ -72,7 +67,7 @@
 
         <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
           {% block body_block %}
-            {% endblock %}
+          {% endblock %}
         </div>
 
       </div>

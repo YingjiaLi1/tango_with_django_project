@@ -26,9 +26,9 @@ def index(request):
     return response
 
 def about(request):
-    #if request.session.test_cookie_worked():
-        #print ("TEST COOKIE WORKED!")
-        #request.session.delete_test_cookie()
+    if request.session.test_cookie_worked():
+        print ("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
     #context_dict = {'aboutme': "This tutorial has been put together by Yingjia L."}
     #print(request.method)
     #print(request.user)
